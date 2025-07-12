@@ -1,8 +1,9 @@
-import { Header } from "./components/Header/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 
 import { CORE_CONCEPTS } from "./data";
 
 import CoreConcept from "./components/CoreConcept";
+import TabButton from "./components/TabButton.jsx";
 
 function App() {
   return (
@@ -24,7 +25,12 @@ function App() {
         </section>
         <section id="examples">
           <h2>Examples</h2>
-          <menu></menu>
+          <menu>
+            <TabButton>Componentes</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
