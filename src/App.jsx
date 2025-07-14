@@ -4,10 +4,14 @@ import { CORE_CONCEPTS } from "./data";
 
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton.jsx";
+import { useState } from "react";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Plese click a botton");
+
   function handSelect(selectedButton) {
-    console.log(selectedButton);
+    setSelectedTopic(selectedButton);
+    console.log(selectedTopic);
   }
 
   return (
@@ -15,7 +19,7 @@ function App() {
       <Header />
       <main>
         <section id="core-concepts">
-          <h2>Core Concepts</h2>
+          <h2>Core Concep ts</h2>
           <ul>
             <CoreConcept
               title={CORE_CONCEPTS[0].title}
@@ -37,6 +41,7 @@ function App() {
             <TabButton onSelect={() => handSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handSelect("state")}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
